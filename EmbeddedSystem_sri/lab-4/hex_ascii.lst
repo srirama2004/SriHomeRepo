@@ -1,0 +1,152 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA, READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 40001000        DCD              0x40001000  ; stack pointer val
+                                                            ue when stack is em
+                                                            pty
+    5 00000004 00000000        DCD              Reset_Handler ; reset vector
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode, CODE, READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 480D            LDR              R0,=NUM
+   12 00000002 4E0E            LDR              R6,=RESULT
+   13 00000004 6801            LDR              R1,[R0]
+   14 00000006 F001 020F       AND              R2,R1,#0XF
+   15 0000000A 2A0A            CMP              R2,#0XA
+   16 0000000C D301            BLO              DOWN
+   17 0000000E F102 0211       ADD              R2,#0X11
+   18 00000012 F102 0230 
+                       DOWN    ADD              R2,0X30
+   19 00000016 F846 2B04       STR              R2,[R6],#4
+   20 0000001A 6803            LDR              R3,[R0]
+   21 0000001C F003 03F0       AND              R3,R3,#0XF0
+   22 00000020 EA4F 1313       LSR              R3,#4
+   23 00000024 2B0A            CMP              R3,#0XA
+   24 00000026 D301            BLO              DOWN1
+   25 00000028 F103 0311       ADD              R3,#0X11
+   26 0000002C         DOWN1
+   27 0000002C F103 0330       ADD              R3,#0X30
+   28 00000030 6033            STR              R3,[R6]
+   29 00000032 E7FE    STOP    B                STOP
+   30 00000034 0000004A 
+                       NUM     DCD              0x0000004A
+   31 00000038 00000000 
+              00000000         AREA             data, DATA, READWRITE
+   32 00000000 00000000 
+              00000000 RESULT  DCD              0,0
+   33 00000008                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=hex_asci
+i.d -ohex_ascii.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\
+ARM\Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=hex_ascii.lst hex_ascii.
+ASM
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file hex_ascii.ASM
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file hex_ascii.ASM
+   Uses
+      At line 2 in file hex_ascii.ASM
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DOWN 00000012
+
+Symbol: DOWN
+   Definitions
+      At line 18 in file hex_ascii.ASM
+   Uses
+      At line 16 in file hex_ascii.ASM
+Comment: DOWN used once
+DOWN1 0000002C
+
+Symbol: DOWN1
+   Definitions
+      At line 26 in file hex_ascii.ASM
+   Uses
+      At line 24 in file hex_ascii.ASM
+Comment: DOWN1 used once
+NUM 00000034
+
+Symbol: NUM
+   Definitions
+      At line 30 in file hex_ascii.ASM
+   Uses
+      At line 11 in file hex_ascii.ASM
+Comment: NUM used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file hex_ascii.ASM
+   Uses
+      At line 5 in file hex_ascii.ASM
+      At line 9 in file hex_ascii.ASM
+
+STOP 00000032
+
+Symbol: STOP
+   Definitions
+      At line 29 in file hex_ascii.ASM
+   Uses
+      At line 29 in file hex_ascii.ASM
+Comment: STOP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file hex_ascii.ASM
+   Uses
+      None
+Comment: mycode unused
+6 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESULT 00000000
+
+Symbol: RESULT
+   Definitions
+      At line 32 in file hex_ascii.ASM
+   Uses
+      At line 12 in file hex_ascii.ASM
+Comment: RESULT used once
+data 00000000
+
+Symbol: data
+   Definitions
+      At line 31 in file hex_ascii.ASM
+   Uses
+      None
+Comment: data unused
+2 symbols
+343 symbols in table

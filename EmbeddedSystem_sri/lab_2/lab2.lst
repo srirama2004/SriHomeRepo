@@ -1,0 +1,155 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET,DATA,READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 10001000        DCD              0x10001000  ; stack pointer val
+                                                            ue when stack is em
+                                                            pty
+    5 00000004 00000000        DCD              Reset_Handler ; reset vector
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode, CODE, READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 4811            LDR              R0,=SRC1
+   12 00000002 4912            LDR              R1,=SRC2
+   13 00000004 4E12            LDR              R6,=RES
+   14 00000006 F04F 0504       MOV              R5,#4
+   15 0000000A         UP
+   16 0000000A F850 2B04       LDR              R2,[R0],#4
+   17 0000000E F851 3B04       LDR              R3,[R1],#4
+   18 00000012 18D4            ADDS             R4,R2,R3
+   19 00000014 F846 4B04       STR              R4,[R6],#4
+   20 00000018 F1A5 0501       SUB              R5,#1
+   21 0000001C 2D00            CMP              R5,#0
+   22 0000001E D1F4            BNE              UP
+   23 00000020 F147 0700       ADC              R7,#0
+   24 00000024 6037            STR              R7,[R6]
+   25 00000026 E7FE    STOP    B                STOP
+   26 00000028 00000011 
+              000000F1 
+              00000023 
+              00000045 SRC1    DCD              0X11,0XF1,0X23,0X45
+   27 00000038 00000011 
+              00000012 
+              00000015 
+              00000017 SRC2    DCD              0X11,0X12,0X15,0X17
+   28 00000048 00000000 
+              00000000 
+              00000000         AREA             MYDATA,DATA,READWRITE
+   29 00000000 00000000 
+              00000000 
+              00000000 
+              00000000 RES     DCD              0,0,0,0
+   30 00000010                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=lab2.d -
+olab2.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\NX
+P\LPC17xx --predefine="__EVAL SETA 1" --list=lab2.lst lab2.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file lab2.asm
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file lab2.asm
+   Uses
+      At line 2 in file lab2.asm
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file lab2.asm
+   Uses
+      At line 5 in file lab2.asm
+      At line 9 in file lab2.asm
+
+SRC1 00000028
+
+Symbol: SRC1
+   Definitions
+      At line 26 in file lab2.asm
+   Uses
+      At line 11 in file lab2.asm
+Comment: SRC1 used once
+SRC2 00000038
+
+Symbol: SRC2
+   Definitions
+      At line 27 in file lab2.asm
+   Uses
+      At line 12 in file lab2.asm
+Comment: SRC2 used once
+STOP 00000026
+
+Symbol: STOP
+   Definitions
+      At line 25 in file lab2.asm
+   Uses
+      At line 25 in file lab2.asm
+Comment: STOP used once
+UP 0000000A
+
+Symbol: UP
+   Definitions
+      At line 15 in file lab2.asm
+   Uses
+      At line 22 in file lab2.asm
+Comment: UP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file lab2.asm
+   Uses
+      None
+Comment: mycode unused
+6 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+MYDATA 00000000
+
+Symbol: MYDATA
+   Definitions
+      At line 28 in file lab2.asm
+   Uses
+      None
+Comment: MYDATA unused
+RES 00000000
+
+Symbol: RES
+   Definitions
+      At line 29 in file lab2.asm
+   Uses
+      At line 13 in file lab2.asm
+Comment: RES used once
+2 symbols
+343 symbols in table

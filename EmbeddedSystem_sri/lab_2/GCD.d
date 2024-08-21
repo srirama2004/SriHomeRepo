@@ -1,0 +1,1 @@
+GCD.o: GCD.ASM

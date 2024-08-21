@@ -1,0 +1,152 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA, READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 40001000        DCD              0x40001000  ; stack pointer val
+                                                            ue when stack is em
+                                                            pty
+    5 00000004 00000000        DCD              Reset_Handler ; reset vector
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode, CODE, READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 480E            LDR              R0,=SRC1
+   12 00000002 6801            LDR              R1,[R0]
+   13 00000004 4C0E            LDR              R4,=DST
+   14 00000006 F04F 0316       MOV              R3,#0X16
+   15 0000000A F001 020F       AND              R2,R1,#0XF
+   16 0000000E 2A09            CMP              R2,#0X9
+   17 00000010 D901            BLS              EXIT
+   18 00000012 F102 0230       ADD              R2,#0X30
+   19 00000016         EXIT
+   20 00000016 F102 0207       ADD              R2,#0X07
+   21 0000001A EA4F 1111       LSR              R1,#4
+   22 0000001E F001 010F       AND              R1,#0XF
+   23 00000022 2909            CMP              R1,#0X9
+   24 00000024 D901            BLS              EXITT
+   25 00000026 F101 0130       ADD              R1,#0X30
+   26 0000002A         EXITT
+   27 0000002A F101 0107       ADD              R1,#0X07
+   28 0000002E F844 1B04       STR              R1,[R4],#4
+   29 00000032 6022            STR              R2,[R4]
+   30 00000034 E7FE    STOP    B                STOP
+   31 00000036 00 00 000000FF 
+                       SRC1    DCD              0XFF
+   32 0000003C 00000000 
+              00000000         AREA             mydata,DATA,READWRITE
+   33 00000000 00000000 
+              00000000 DST     DCD              0,0
+   34 00000008                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=Q31HEX_A
+SCII.d -oQ31HEX_ASCII.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:
+\Keil\ARM\Inc\NXP\LPC177x_8x --predefine="__EVAL SETA 1" --list=Q31HEX_ASCII.ls
+t Q31HEX_ASCII.ASM
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file Q31HEX_ASCII.ASM
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file Q31HEX_ASCII.ASM
+   Uses
+      At line 2 in file Q31HEX_ASCII.ASM
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+EXIT 00000016
+
+Symbol: EXIT
+   Definitions
+      At line 19 in file Q31HEX_ASCII.ASM
+   Uses
+      At line 17 in file Q31HEX_ASCII.ASM
+Comment: EXIT used once
+EXITT 0000002A
+
+Symbol: EXITT
+   Definitions
+      At line 26 in file Q31HEX_ASCII.ASM
+   Uses
+      At line 24 in file Q31HEX_ASCII.ASM
+Comment: EXITT used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file Q31HEX_ASCII.ASM
+   Uses
+      At line 5 in file Q31HEX_ASCII.ASM
+      At line 9 in file Q31HEX_ASCII.ASM
+
+SRC1 00000038
+
+Symbol: SRC1
+   Definitions
+      At line 31 in file Q31HEX_ASCII.ASM
+   Uses
+      At line 11 in file Q31HEX_ASCII.ASM
+Comment: SRC1 used once
+STOP 00000034
+
+Symbol: STOP
+   Definitions
+      At line 30 in file Q31HEX_ASCII.ASM
+   Uses
+      At line 30 in file Q31HEX_ASCII.ASM
+Comment: STOP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file Q31HEX_ASCII.ASM
+   Uses
+      None
+Comment: mycode unused
+6 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 33 in file Q31HEX_ASCII.ASM
+   Uses
+      At line 13 in file Q31HEX_ASCII.ASM
+Comment: DST used once
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 32 in file Q31HEX_ASCII.ASM
+   Uses
+      None
+Comment: mydata unused
+2 symbols
+343 symbols in table

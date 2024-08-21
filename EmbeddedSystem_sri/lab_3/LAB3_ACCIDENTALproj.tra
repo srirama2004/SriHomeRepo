@@ -1,0 +1,19 @@
+*** Creating Trace Output File 'LAB3_ACCIDENTALproj.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"q4_128bitsub.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M3 "q4_128bitsub.o" 
+--ro-base 0x00000000 --entry 0x00000000 --rw-base 0x10000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\LAB3_ACCIDENTALproj.map" -o LAB3_ACCIDENTALproj.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'LAB3_ACCIDENTALproj.axf'
+### ADS-LD Command File: 'LAB3_ACCIDENTALproj.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'LAB3_ACCIDENTALproj.lnp', Handle=0x00000BC4
+### Writing '.lnp' file
+### ADS-LD Command file 'LAB3_ACCIDENTALproj.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

@@ -1,0 +1,156 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA, READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 40001000        DCD              0x40001000  ; stack pointer val
+                                                            ue when stack is em
+                                                            pty
+    5 00000004 00000000        DCD              Reset_Handler ; reset vector
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode, CODE, READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 4808            LDR              R0,=SRC1
+   12 00000002 4E09            LDR              R6,=DST
+   13 00000004 4909            LDR              R1,=SRC2
+   14 00000006 6803            LDR              R3,[R0]
+   15 00000008 680C            LDR              R4,[R1]
+   16 0000000A         UP
+   17 0000000A 42A3            CMP              R3,R4
+   18 0000000C D004            BEQ              EXIT
+   19 0000000E BF88 1B1B       SUBHI            R3,R4
+   20 00000012 BF38 1AE4       SUBLO            R4,R3
+   21 00000016 E7F8            B                UP
+   22 00000018         EXIT
+   23 00000018 6033            STR              R3,[R6]
+   24 0000001A E7FE    STOP    B                STOP
+   25 0000001C 00000006 
+                       SRC1    DCD              0X00000006
+   26 00000020 00000003 
+                       SRC2    DCD              0X00000003
+   27 00000024 00000000 
+              00000000 
+              00000000         AREA             mydata,DATA,READWRITE
+   28 00000000 00000000 
+                       DST     DCD              0
+   29 00000004                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=GCD.d -o
+GCD.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\NXP\
+LPC17xx --predefine="__EVAL SETA 1" --list=GCD.lst GCD.ASM
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file GCD.ASM
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file GCD.ASM
+   Uses
+      At line 2 in file GCD.ASM
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+EXIT 00000018
+
+Symbol: EXIT
+   Definitions
+      At line 22 in file GCD.ASM
+   Uses
+      At line 18 in file GCD.ASM
+Comment: EXIT used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file GCD.ASM
+   Uses
+      At line 5 in file GCD.ASM
+      At line 9 in file GCD.ASM
+
+SRC1 0000001C
+
+Symbol: SRC1
+   Definitions
+      At line 25 in file GCD.ASM
+   Uses
+      At line 11 in file GCD.ASM
+Comment: SRC1 used once
+SRC2 00000020
+
+Symbol: SRC2
+   Definitions
+      At line 26 in file GCD.ASM
+   Uses
+      At line 13 in file GCD.ASM
+Comment: SRC2 used once
+STOP 0000001A
+
+Symbol: STOP
+   Definitions
+      At line 24 in file GCD.ASM
+   Uses
+      At line 24 in file GCD.ASM
+Comment: STOP used once
+UP 0000000A
+
+Symbol: UP
+   Definitions
+      At line 16 in file GCD.ASM
+   Uses
+      At line 21 in file GCD.ASM
+Comment: UP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file GCD.ASM
+   Uses
+      None
+Comment: mycode unused
+7 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 28 in file GCD.ASM
+   Uses
+      At line 12 in file GCD.ASM
+Comment: DST used once
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 27 in file GCD.ASM
+   Uses
+      None
+Comment: mydata unused
+2 symbols
+344 symbols in table

@@ -1,0 +1,21 @@
+*** Creating Trace Output File 'es_proj.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup_lpc17xx.o"'
+### List of Objects: adding '"system_lpc17xx.o"'
+### List of Objects: adding '"check1.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M3 "startup_lpc17xx.o" "system_lpc17xx.o" "check1.o" 
+--ro-base 0x00000000 --entry 0x00000000 --rw-base 0x10000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\es_proj.map" -o es_proj.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'es_proj.axf'
+### ADS-LD Command File: 'es_proj.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'es_proj.lnp', Handle=0x000006C8
+### Writing '.lnp' file
+### ADS-LD Command file 'es_proj.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

@@ -1,0 +1,85 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA, READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 40001000        DCD              0x40001000  ; stack pointer val
+                                                            ue when stack is em
+                                                            pty
+    5 00000004 00000000        DCD              Reset_Handler ; reset vector
+    6 00000008         
+    7 00000008                 ALIGN
+    8 00000008                 AREA             mycode, CODE, READONLY
+    9 00000000                 ENTRY
+   10 00000000                 EXPORT           Reset_Handler
+   11 00000000         Reset_Handler
+   12 00000000 F04F 0208       MOV              R2,#8
+   13 00000004 F04F 0309       MOV              R3,#9
+   14 00000008 4614            MOV              R4,R2
+   15 0000000A 461A            MOV              R2,R3
+   16 0000000C 4623            MOV              R3,R4
+   17 0000000E E7FE    STOP    B                STOP
+   18 00000010                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=q1.d -oq
+1.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\NXP\LP
+C17xx --predefine="__EVAL SETA 1" --list=q1.lst q1.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file q1.asm
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file q1.asm
+   Uses
+      At line 2 in file q1.asm
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 11 in file q1.asm
+   Uses
+      At line 5 in file q1.asm
+      At line 10 in file q1.asm
+
+STOP 0000000E
+
+Symbol: STOP
+   Definitions
+      At line 17 in file q1.asm
+   Uses
+      At line 17 in file q1.asm
+Comment: STOP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 8 in file q1.asm
+   Uses
+      None
+Comment: mycode unused
+3 symbols
+336 symbols in table

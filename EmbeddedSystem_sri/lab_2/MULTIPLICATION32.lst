@@ -1,0 +1,148 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA, READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 40001000        DCD              0x40001000  ; stack pointer val
+                                                            ue when stack is em
+                                                            pty
+    5 00000004 00000000        DCD              Reset_Handler ; reset vector
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode, CODE, READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 4808            LDR              R0,=SRC1
+   12 00000002 4E09            LDR              R6,=DST
+   13 00000004 4909            LDR              R1,=SRC2
+   14 00000006 6803            LDR              R3,[R0]
+   15 00000008 680C            LDR              R4,[R1]
+   16 0000000A         UP
+   17 0000000A 191B            ADDS             R3,R4
+   18 0000000C F145 0500       ADC              R5,#0
+   19 00000010 3C01            SUBS             R4,#1
+   20 00000012 F094 0F00       TEQ              R4,#0
+   21 00000016 D1F8            BNE              UP
+   22 00000018 6033            STR              R3,[R6]
+   23 0000001A E7FE    STOP    B                STOP
+   24 0000001C 00000008 
+                       SRC1    DCD              0X00000008
+   25 00000020 00000004 
+                       SRC2    DCD              0X00000004
+   26 00000024 00000000 
+              00000000 
+              00000000         AREA             mydata,DATA,READWRITE
+   27 00000000 00000000 
+                       DST     DCD              0
+   28 00000004                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=MULTIPLI
+CATION32.d -oMULTIPLICATION32.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Incl
+ude -IC:\Keil\ARM\Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=MULTIPLICA
+TION32.lst MULTIPLICATION32.ASM
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file MULTIPLICATION32.ASM
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file MULTIPLICATION32.ASM
+   Uses
+      At line 2 in file MULTIPLICATION32.ASM
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file MULTIPLICATION32.ASM
+   Uses
+      At line 5 in file MULTIPLICATION32.ASM
+      At line 9 in file MULTIPLICATION32.ASM
+
+SRC1 0000001C
+
+Symbol: SRC1
+   Definitions
+      At line 24 in file MULTIPLICATION32.ASM
+   Uses
+      At line 11 in file MULTIPLICATION32.ASM
+Comment: SRC1 used once
+SRC2 00000020
+
+Symbol: SRC2
+   Definitions
+      At line 25 in file MULTIPLICATION32.ASM
+   Uses
+      At line 13 in file MULTIPLICATION32.ASM
+Comment: SRC2 used once
+STOP 0000001A
+
+Symbol: STOP
+   Definitions
+      At line 23 in file MULTIPLICATION32.ASM
+   Uses
+      At line 23 in file MULTIPLICATION32.ASM
+Comment: STOP used once
+UP 0000000A
+
+Symbol: UP
+   Definitions
+      At line 16 in file MULTIPLICATION32.ASM
+   Uses
+      At line 21 in file MULTIPLICATION32.ASM
+Comment: UP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file MULTIPLICATION32.ASM
+   Uses
+      None
+Comment: mycode unused
+6 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 27 in file MULTIPLICATION32.ASM
+   Uses
+      At line 12 in file MULTIPLICATION32.ASM
+Comment: DST used once
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 26 in file MULTIPLICATION32.ASM
+   Uses
+      None
+Comment: mydata unused
+2 symbols
+343 symbols in table

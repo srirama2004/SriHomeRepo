@@ -1,0 +1,161 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA, READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 40001000        DCD              0x40001000  ; stack pointer val
+                                                            ue when stack is em
+                                                            pty
+    5 00000004 00000000        DCD              Reset_Handler ; reset vector
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode, CODE, READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 4815            LDR              R0,=SRC
+   12 00000002 4916            LDR              R1,=SRC1
+   13 00000004 4F16            LDR              R7,=DST
+   14 00000006 F04F 0600       MOV              R6,#0
+   15 0000000A F04F 5400       MOV              R4,#0X20000000
+   16 0000000E F384 8803       MSR              xPSR,R4
+   17 00000012         UP
+   18 00000012 F850 2B04       LDR              R2,[R0],#4
+   19 00000016 F851 3B04       LDR              R3,[R1],#4
+   20 0000001A EB72 0503       SBCS             R5,R2,R3
+   21 0000001E F847 5B04       STR              R5,[R7],#4
+   22 00000022 F106 0601       ADD              R6,#1
+   23 00000026 F096 0F04       TEQ              R6,#4
+   24 0000002A D1F2            BNE              UP
+   25 0000002C F168 0800       SBC              R8,#0
+   26 00000030 F8C7 8000       STR              R8,[R7]
+   27 00000034 E7FE    STOP    B                STOP
+   28 00000036 00 00 00000012 
+              00000005 
+              00000008 
+              0000000E SRC     DCD              0x12,0x00000005,0x00000008,0x00
+00000E
+   29 00000048 0000000F 
+              00000003 
+              00000008 
+              0000000A SRC1    DCD              0XF,0x00000003,0x00000008,0x000
+0000A
+   30 00000058 00000000 
+              00000000 
+              00000000         AREA             mydata,DATA,READWRITE
+   31 00000000 00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 DST     DCD              0,0,0,0,0
+   32 00000014                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=SUBTRACT
+128BIT.d -oSUBTRACT128BIT.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include 
+-IC:\Keil\ARM\Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=SUBTRACT128BIT
+.lst SUBTRACT128BIT.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file SUBTRACT128BIT.asm
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file SUBTRACT128BIT.asm
+   Uses
+      At line 2 in file SUBTRACT128BIT.asm
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file SUBTRACT128BIT.asm
+   Uses
+      At line 5 in file SUBTRACT128BIT.asm
+      At line 9 in file SUBTRACT128BIT.asm
+
+SRC 00000038
+
+Symbol: SRC
+   Definitions
+      At line 28 in file SUBTRACT128BIT.asm
+   Uses
+      At line 11 in file SUBTRACT128BIT.asm
+Comment: SRC used once
+SRC1 00000048
+
+Symbol: SRC1
+   Definitions
+      At line 29 in file SUBTRACT128BIT.asm
+   Uses
+      At line 12 in file SUBTRACT128BIT.asm
+Comment: SRC1 used once
+STOP 00000034
+
+Symbol: STOP
+   Definitions
+      At line 27 in file SUBTRACT128BIT.asm
+   Uses
+      At line 27 in file SUBTRACT128BIT.asm
+Comment: STOP used once
+UP 00000012
+
+Symbol: UP
+   Definitions
+      At line 17 in file SUBTRACT128BIT.asm
+   Uses
+      At line 24 in file SUBTRACT128BIT.asm
+Comment: UP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file SUBTRACT128BIT.asm
+   Uses
+      None
+Comment: mycode unused
+6 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 31 in file SUBTRACT128BIT.asm
+   Uses
+      At line 13 in file SUBTRACT128BIT.asm
+Comment: DST used once
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 30 in file SUBTRACT128BIT.asm
+   Uses
+      None
+Comment: mydata unused
+2 symbols
+343 symbols in table

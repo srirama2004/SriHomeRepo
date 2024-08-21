@@ -1,0 +1,1 @@
+LCM.o: LCM.ASM

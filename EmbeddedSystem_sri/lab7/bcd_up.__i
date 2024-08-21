@@ -1,0 +1,5 @@
+-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork 
+-I C:\Keil\ARM\RV31\INC 
+-I C:\Keil\ARM\CMSIS\Include 
+-I C:\Keil\ARM\Inc\NXP\LPC17xx 
+-o "bcd_up.o" --omf_browse "bcd_up.crf" --depend "bcd_up.d" "bcd_up.c"

@@ -1,0 +1,9 @@
+message_dis.o: message_dis.c
+message_dis.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+message_dis.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
+message_dis.o: C:\Keil\ARM\Inc\NXP\LPC17xx\LPC17xx.h
+message_dis.o: C:\Keil\ARM\CMSIS\Include\core_cm3.h
+message_dis.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+message_dis.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
+message_dis.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
+message_dis.o: C:\Keil\ARM\Inc\NXP\LPC17xx\system_LPC17xx.h

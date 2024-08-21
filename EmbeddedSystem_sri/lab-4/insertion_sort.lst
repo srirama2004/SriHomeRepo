@@ -1,0 +1,168 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA, READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 40001000        DCD              0x40001000  ; stack pointer val
+                                                            ue when stack is em
+                                                            pty
+    5 00000004 00000000        DCD              Reset_Handler ; reset vector
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode, CODE, READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 480F            LDR              R0, =SRC
+   12 00000002 4607            MOV              R7,R0
+   13 00000004 6802    UP      LDR              R2,[R0]
+   14 00000006 4613            MOV              R3,R2       ;             KEY=R
+                                                            3
+   15 00000008 4601            MOV              R1,R0
+   16 0000000A 2C05            CMP              R4,#5
+   17 0000000C D017            BEQ              EXIT
+   18 0000000E F104 0401       ADD              R4,#1
+   19 00000012 460E    BACK    MOV              R6,R1
+   20 00000014 F2A1 0104       ADD              R1,#-4
+   21 00000018 680D            LDR              R5,[R1]
+   22 0000001A EA95 0F03       TEQ              R5,R3
+   23 0000001E DD06            BLE              DOWN
+   24 00000020 42B9            CMP              R1,R7
+   25 00000022 D304            BLO              DOWN
+   26 00000024 F8D1 8000       LDR              R8,[R1]
+   27 00000028 F8C6 8000       STR              R8,[R6]
+   28 0000002C E7F1            B                BACK
+   29 0000002E         DOWN
+   30 0000002E F8D6 9000       LDR              R9,[R6]
+   31 00000032 6033            STR              R3,[R6]
+   32 00000034 F8C0 9000       STR              R9,[R0]
+   33 00000038 F100 0004       ADD              R0,#4
+   34 0000003C E7E2            B                UP
+   35 0000003E         EXIT
+   36 0000003E E7FE    STOP    B                STOP
+   37 00000040 00000000        AREA             mydata,DATA,READWRITE
+   38 00000000 00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 SRC     DCD              0,0,0,0,0
+   39 00000014                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=insertio
+n_sort.d -oinsertion_sort.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include 
+-IC:\Keil\ARM\Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=insertion_sort
+.lst insertion_sort.ASM
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file insertion_sort.ASM
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file insertion_sort.ASM
+   Uses
+      At line 2 in file insertion_sort.ASM
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+BACK 00000012
+
+Symbol: BACK
+   Definitions
+      At line 19 in file insertion_sort.ASM
+   Uses
+      At line 28 in file insertion_sort.ASM
+Comment: BACK used once
+DOWN 0000002E
+
+Symbol: DOWN
+   Definitions
+      At line 29 in file insertion_sort.ASM
+   Uses
+      At line 23 in file insertion_sort.ASM
+      At line 25 in file insertion_sort.ASM
+
+EXIT 0000003E
+
+Symbol: EXIT
+   Definitions
+      At line 35 in file insertion_sort.ASM
+   Uses
+      At line 17 in file insertion_sort.ASM
+Comment: EXIT used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file insertion_sort.ASM
+   Uses
+      At line 5 in file insertion_sort.ASM
+      At line 9 in file insertion_sort.ASM
+
+STOP 0000003E
+
+Symbol: STOP
+   Definitions
+      At line 36 in file insertion_sort.ASM
+   Uses
+      At line 36 in file insertion_sort.ASM
+Comment: STOP used once
+UP 00000004
+
+Symbol: UP
+   Definitions
+      At line 13 in file insertion_sort.ASM
+   Uses
+      At line 34 in file insertion_sort.ASM
+Comment: UP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file insertion_sort.ASM
+   Uses
+      None
+Comment: mycode unused
+7 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+SRC 00000000
+
+Symbol: SRC
+   Definitions
+      At line 38 in file insertion_sort.ASM
+   Uses
+      At line 11 in file insertion_sort.ASM
+Comment: SRC used once
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 37 in file insertion_sort.ASM
+   Uses
+      None
+Comment: mydata unused
+2 symbols
+344 symbols in table

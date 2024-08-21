@@ -1,0 +1,1 @@
+SEARCH.o: SEARCH.ASM

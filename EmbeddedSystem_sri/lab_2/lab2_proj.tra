@@ -1,0 +1,19 @@
+*** Creating Trace Output File 'lab2_proj.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"multiplication32.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M3 "multiplication32.o" 
+--ro-base 0x00000000 --entry 0x00000000 --rw-base 0x10000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\lab2_proj.map" -o lab2_proj.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'lab2_proj.axf'
+### ADS-LD Command File: 'lab2_proj.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'lab2_proj.lnp', Handle=0x00001D84
+### Writing '.lnp' file
+### ADS-LD Command file 'lab2_proj.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

@@ -1,0 +1,125 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA, READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 40001000        DCD              0x40001000  ; stack pointer val
+                                                            ue when stack is em
+                                                            pty
+    5 00000004 00000000        DCD              Reset_Handler ; reset vector
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode, CODE, READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 4807            LDR              R0,=SRC1
+   12 00000002 4E08            LDR              R6,=DST
+   13 00000004 6801            LDR              R1,[R0]
+   14 00000006 6802            LDR              R2,[R0]
+   15 00000008 EA4F 1212       LSR              R2,#4
+   16 0000000C F001 010F       AND              R1,0XF
+   17 00000010 F04F 030A       MOV              R3,#0XA
+   18 00000014 FB02 1403       MLA              R4,R2,R3,R1
+   19 00000018 6034            STR              R4,[R6]
+   20 0000001A E7FE    STOP    B                STOP
+   21 0000001C 00000015 
+                       SRC1    DCD              0X00000015
+   22 00000020 00000000 
+              00000000         AREA             mydata,DATA,READWRITE
+   23 00000000 00000000 
+                       DST     DCD              0
+   24 00000004                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=BCD_HEX.
+d -oBCD_HEX.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\
+Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=BCD_HEX.lst BCD_HEX.ASM
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file BCD_HEX.ASM
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file BCD_HEX.ASM
+   Uses
+      At line 2 in file BCD_HEX.ASM
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file BCD_HEX.ASM
+   Uses
+      At line 5 in file BCD_HEX.ASM
+      At line 9 in file BCD_HEX.ASM
+
+SRC1 0000001C
+
+Symbol: SRC1
+   Definitions
+      At line 21 in file BCD_HEX.ASM
+   Uses
+      At line 11 in file BCD_HEX.ASM
+Comment: SRC1 used once
+STOP 0000001A
+
+Symbol: STOP
+   Definitions
+      At line 20 in file BCD_HEX.ASM
+   Uses
+      At line 20 in file BCD_HEX.ASM
+Comment: STOP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file BCD_HEX.ASM
+   Uses
+      None
+Comment: mycode unused
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 23 in file BCD_HEX.ASM
+   Uses
+      At line 12 in file BCD_HEX.ASM
+Comment: DST used once
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 22 in file BCD_HEX.ASM
+   Uses
+      None
+Comment: mydata unused
+2 symbols
+341 symbols in table

@@ -1,0 +1,1 @@
+MLA.o: MLA.ASM

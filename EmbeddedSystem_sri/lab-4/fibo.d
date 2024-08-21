@@ -1,0 +1,1 @@
+fibo.o: fibo.ASM

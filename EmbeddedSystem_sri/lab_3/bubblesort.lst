@@ -1,0 +1,183 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA, READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 40001000        DCD              0x40001000  ; stack pointer val
+                                                            ue when stack is em
+                                                            pty
+    5 00000004 00000000        DCD              Reset_Handler ; reset vector
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode, CODE, READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 480D            LDR              R0, =SRC
+   12 00000002         UP
+   13 00000002 490D            LDR              R1,=SRC
+   14 00000004 4C0D            LDR              R4,=SRC+4
+   15 00000006 2D05            CMP              R5,#5
+   16 00000008 D014            BEQ              EXIT
+   17 0000000A F105 0501       ADD              R5,#1
+   18 0000000E F04F 0600       MOV              R6,#0
+   19 00000012 680A    BACK    LDR              R2,[R1]
+   20 00000014 6823            LDR              R3,[R4]
+   21 00000016 F106 0601       ADD              R6,#1
+   22 0000001A F096 0F05       TEQ              R6,#5
+   23 0000001E D0F0            BEQ              UP
+   24 00000020 4293            CMP              R3,R2
+   25 00000022 D304            BLO              SWAP
+   26 00000024         BA
+   27 00000024 F101 0104       ADD              R1,#4
+   28 00000028 F104 0404       ADD              R4,#4
+   29 0000002C E7F1            B                BACK
+   30 0000002E         SWAP
+   31 0000002E 600B            STR              R3,[R1]
+   32 00000030 6022            STR              R2,[R4]
+   33 00000032 E7F7            B                BA
+   34 00000034         EXIT
+   35 00000034 E7FE    STOP    B                STOP
+   36 00000036 00 00 00000000 
+              00000004 
+              00000000         AREA             mydata,DATA,READWRITE
+   37 00000000 00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 SRC     DCD              0,0,0,0,0
+   38 00000014                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=bubbleso
+rt.d -obubblesort.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Kei
+l\ARM\Inc\NXP\LPC177x_8x --predefine="__EVAL SETA 1" --list=bubblesort.lst bubb
+lesort.ASM
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file bubblesort.ASM
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file bubblesort.ASM
+   Uses
+      At line 2 in file bubblesort.ASM
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+BA 00000024
+
+Symbol: BA
+   Definitions
+      At line 26 in file bubblesort.ASM
+   Uses
+      At line 33 in file bubblesort.ASM
+Comment: BA used once
+BACK 00000012
+
+Symbol: BACK
+   Definitions
+      At line 19 in file bubblesort.ASM
+   Uses
+      At line 29 in file bubblesort.ASM
+Comment: BACK used once
+EXIT 00000034
+
+Symbol: EXIT
+   Definitions
+      At line 34 in file bubblesort.ASM
+   Uses
+      At line 16 in file bubblesort.ASM
+Comment: EXIT used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file bubblesort.ASM
+   Uses
+      At line 5 in file bubblesort.ASM
+      At line 9 in file bubblesort.ASM
+
+STOP 00000034
+
+Symbol: STOP
+   Definitions
+      At line 35 in file bubblesort.ASM
+   Uses
+      At line 35 in file bubblesort.ASM
+Comment: STOP used once
+SWAP 0000002E
+
+Symbol: SWAP
+   Definitions
+      At line 30 in file bubblesort.ASM
+   Uses
+      At line 25 in file bubblesort.ASM
+Comment: SWAP used once
+UP 00000002
+
+Symbol: UP
+   Definitions
+      At line 12 in file bubblesort.ASM
+   Uses
+      At line 23 in file bubblesort.ASM
+Comment: UP used once
+mycode 00000000
+
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+Symbol: mycode
+   Definitions
+      At line 7 in file bubblesort.ASM
+   Uses
+      None
+Comment: mycode unused
+8 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+SRC 00000000
+
+Symbol: SRC
+   Definitions
+      At line 37 in file bubblesort.ASM
+   Uses
+      At line 11 in file bubblesort.ASM
+      At line 13 in file bubblesort.ASM
+      At line 14 in file bubblesort.ASM
+
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 36 in file bubblesort.ASM
+   Uses
+      None
+Comment: mydata unused
+2 symbols
+345 symbols in table
