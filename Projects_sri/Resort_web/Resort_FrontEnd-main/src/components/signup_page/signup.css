@@ -1,0 +1,139 @@
+.signup_email {
+  position: relative;
+  width: 475px;
+  height: 63px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+/* Rectangle 4 */
+.signup_email_inp > input {
+  width: 250px;
+  text-align: center;
+  height: 40px;
+  position: relative;
+  background: #d9d9d9;
+  border-radius: 8px;
+}
+/* Username */
+.signup_emailtxt {
+  width: 180px;
+  height: 63px;
+  padding-left: 20px;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 60px;
+  margin: 0;
+  color: #ffffff;
+}
+
+/* don’t have a account? sign up */
+.signup_loginbtn {
+  position: relative;
+  display: flex;
+
+  top: -35px;
+
+  justify-content: center;
+
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: #ffffff;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Rectangle 7 */
+
+.signupbtn {
+  position: relative;
+  display: block;
+  width: 200px;
+  height: 54px;
+
+  top: -25px;
+
+  left: 133px;
+  background: #d9d9d9;
+  border-radius: 25px;
+}
+
+/* LOGIN */
+
+.signup {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 44px;
+  /* identical to box height */
+
+  color: #000000;
+  top: 5px;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.signupbtn > input {
+  position: relative;
+  width: 200px;
+  height: 54px;
+  top: -74px;
+  font-size: 0px;
+  background: #ffffff00;
+  border-radius: 25px;
+}
+
+.signupbg {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  width: 470px;
+  height: 580px;
+
+  /* top: -150px;
+left: 700px; */
+
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 63px;
+}
+
+.signUp_list {
+  margin-top: 40px;
+}
+
+.errors {
+  display: flex;
+  justify-content: center;
+  margin-top: 0px;
+}
+
+.errors > h5 {
+  position: relative;
+  margin: 0%;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  top: -10px;
+  line-height: 24px;
+
+  color: #ff0000;
+
+  text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25);
+}
+

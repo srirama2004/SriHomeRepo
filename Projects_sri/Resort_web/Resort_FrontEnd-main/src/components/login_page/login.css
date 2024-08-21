@@ -1,0 +1,361 @@
+/* NavBar */
+
+.navbar {
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  left: 0px;
+  top: 0px;
+}
+.navrect {
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  background: rgba(255, 212, 71, 0.83);
+}
+.resort {
+  position: relative;
+  width: 96px;
+  height: 85px;
+  scale: 50%;
+  left: 10px;
+  top: 0px;
+}
+
+/* Intro */
+
+.intro {
+  display: block;
+  position: relative;
+  width: 50%;
+  height: 235px;
+  left: 38px;
+  top: 200px;
+}
+
+.introdesc {
+  position: relative;
+  right: 0%;
+  top: 0px;
+  margin: 0;
+  top: -20px;
+
+  display: block;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+
+  color: #ffffff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Manipal Resorts */
+.introtitle {
+  position: relative;
+  width: 100%;
+  height: 77px;
+
+  right: 0%;
+  top: -20px;
+
+  margin: 0%;
+  padding: 0%;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 77px;
+
+  color: #ffffff;
+
+  backdrop-filter: blur(2px);
+  /* Note: backdrop-filter has minimal browser support */
+}
+
+/* Resort */
+.introresort {
+  position: relative;
+  width: 96px;
+  height: 85px;
+  left: 0px;
+  top: -10px;
+  z-index: 10;
+}
+
+/* Background */
+.background > .bg {
+  position: absolute;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  opacity: 70%;
+  z-index: -10;
+}
+
+/* Form */
+.loginform {
+  position: relative;
+  display: block;
+  width: 332px;
+  height: 362px;
+}
+/* Intersect */
+
+.loginheader {
+  position: relative;
+  width: 470px;
+  height: 60px;
+  border-top-right-radius: 100px;
+  border-top-left-radius: 100px;
+  z-index: 1;
+  background: rgba(255, 212, 71, 0.83);
+}
+/* Rectangle 9 */
+.loginbg {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  width: 470px;
+  height: 512px;
+
+  /* top: -150px;
+left: 700px; */
+
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 63px;
+}
+
+.passgrp {
+  position: relative;
+  width: 450pxx;
+  height: 111px;
+  margin: 20px;
+}
+
+/* Rectangle 4 */
+.pass {
+  position: relative;
+  width: 425px;
+  height: 51px;
+  margin: 0;
+  top: -20px;
+
+  background: #d9d9d9;
+  border-radius: 8px;
+}
+
+.passtxt {
+  /* Password */
+
+  position: relative;
+
+  width: 300px;
+
+  height: 44px;
+
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 60px;
+
+  color: #ffffff;
+}
+
+.emailgrp {
+  position: relative;
+  width: 450px;
+  height: 111px;
+  margin: 20px;
+}
+
+/* Rectangle 4 */
+.email {
+  position: relative;
+  width: 425px;
+  height: 51px;
+  margin: 0;
+  top: -20px;
+
+  background: #d9d9d9;
+  border-radius: 8px;
+}
+
+.emailtxt {
+  /* Password */
+
+  position: relative;
+  width: 218px;
+  height: 44px;
+
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 60px;
+
+  color: #ffffff;
+}
+
+/* don’t have a account? sign up */
+.login_signupbtn {
+  position: relative;
+  display: flex;
+
+  top: -5px;
+  justify-content: center;
+  color: #fdfdfd;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 2px;
+
+  color: #ffffff;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.login_signupbtn > h2 {
+
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+
+  margin: 2px;
+
+
+
+  color: #ffffff;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Rectangle 7 */
+
+.loginbtn {
+  position: relative;
+  display: block;
+  width: 200px;
+  height: 54px;
+  top: -10px;
+  left: 133px;
+  background: #d9d9d9;
+  border-radius: 25px;
+}
+
+/* LOGIN */
+
+.login {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 44px;
+  /* identical to box height */
+
+  color: #000000;
+  top: 5px;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.email > input {
+  position: relative;
+  width: 418px;
+  height: 47px;
+  margin: 0;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+
+  background: #efeeee00;
+  border-radius: 8px;
+}
+
+.pass > input {
+  position: relative;
+  width: 418px;
+  height: 47px;
+  margin: 0;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+
+  background: #efeeee00;
+  border-radius: 8px;
+}
+
+.loginbtn > input {
+  position: relative;
+  width: 200px;
+  height: 54px;
+  top: -74px;
+  font-size: 0px;
+  background: #ffffff00;
+  border-radius: 25px;
+}
+
+.Navlist {
+  z-index: 10;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  align-self: flex-end;
+}
+
+.Navlist > li > a {
+  all: unset;
+}
+.Navlist > li {
+  text-decoration: none;
+  list-style: none;
+  background-color: #f5e07f00;
+  margin: 20px;
+  display: inline;
+  padding-left: 4px;
+  padding-right: 4px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  border-radius: 5px;
+  line-height: 44px;
+  color: rgb(0, 0, 0);
+  text-shadow: #000000;
+}
+
+.Navlist > li:hover {
+  color: rgb(255, 255, 255);
+  background-color: #000000d2;
+}
+
+.navcontents {
+  top: -56px;
+  left: -30px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}

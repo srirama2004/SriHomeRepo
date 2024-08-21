@@ -1,0 +1,308 @@
+.Hrectangle{
+  background-color:#ecb910;
+  ;
+  z-index: 1;
+  opacity: 0.8;
+  height: 30px;
+  width: 100vw;
+    position: absolute; 
+    top: 0; /* Moves the element to the top of its containing element */
+    left: 0; /* Keeps the element aligned to the left */
+    line-height: 0.8;
+}
+.Hbg >  img{
+  position: absolute;
+  object-fit: cover;
+  opacity: 70%;
+  width: 100vw;
+  margin-top: 32px;
+  height: 65%;
+  z-index: -10;
+}
+.Hrectangle1{
+  background-color:whitesmoke;
+  z-index: -1;
+  opacity: 0.8;
+  height: 30vh;
+  width: 100vw;
+    position: absolute; 
+    top: 90%; /* Moves the element to the top of its containing element */
+    left: 0; /* Keeps the element aligned to the left */
+    line-height: 0.8;
+    border-radius: 10px;
+}
+.Hrectangle1:hover {
+  background-color:gray;
+}
+.Hc1{
+  position: relative;
+  margin-top: 3%;
+  margin-left: 0.5;
+  width: 100%;
+  height: 70%;
+  border-radius: 10px;
+}
+.Htext{
+  background-color:white;
+  position: relative;
+  margin-top: 2.5%;
+  margin-left: 35%;
+  border-radius: 50px;
+  width: 60%;
+  height: 70%;
+  justify-self: center;
+  text-align: center;
+}
+.RoomBook {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  background-color: #ecb910;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  margin-left: 40%;
+  color: black;
+  line-height: 24px;
+  margin-top: 0%;
+  width: 50%;
+  border-radius: 40px;
+}
+.RoomBook:hover {
+  background-color:green;
+}
+  .Hname{
+  color: black;
+  font-style: italic;
+  font-size: 30px;
+  margin-top: 10%;
+  z-index: 5;
+} 
+.Hc2{
+
+  position: relative;
+  margin-top: 3%;
+  margin-left: 0.5;
+  width: 100%;
+  height: 70%;
+  border-radius: 10px;
+}
+.Htext1{
+  background-color:white;
+  position: relative;
+  margin-top: 2.5%;
+  margin-left: 35%;
+  border-radius: 50px;
+  width: 60%;
+  height: 70%;
+  justify-self: center;
+  text-align: center;
+}
+.Cabservice {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  background-color: #ecb910;
+  margin-top: 0%;
+  font-size: 20px;
+  margin-left: 40%;
+  color: black;
+  line-height: 24px;
+  width: 50%;
+  border-radius: 40px;
+}
+.Cabservice:hover {
+  background-color:green;
+}
+.Hc3{
+  position: relative;
+  margin-top: 3%;
+  margin-left: 0.5;
+  width: 100%;
+  height: 70%;
+  border-radius: 10px;
+}
+.Htext2{
+  background-color:white;
+  position: relative;
+  margin-top: 2%;
+  margin-left: 35%;
+  border-radius: 50px;
+  width: 60%;
+  height: 70%;
+  justify-self: center;
+  text-align: center;
+}
+.FoodOrder {
+  position: relative;
+  display: flex;
+  background-color: #ecb910;
+  margin-top: 0%;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  margin-left: 40%;
+  color: black;
+  line-height: 24px;
+  width: 50%;
+  border-radius: 40px;
+}
+.FoodOrder:hover {
+  background-color:green;
+}
+.Hrectangle2{
+  background-color:whitesmoke;
+  z-index: -1;
+  opacity: 0.8;
+  height: 30vh;
+  width: 100vw;
+    position: absolute; 
+    top: 120.5%; /* Moves the element to the top of its containing element */
+    left: 0; /* Keeps the element aligned to the left */
+    line-height: 0.8;
+    border-radius: 10px;
+}
+.Hrectangle2:hover {
+  background-color:gray;
+}
+.Hrectangle3{
+  background-color:whitesmoke;
+  z-index: -1;
+  opacity: 0.8;
+  height: 30vh;
+  width: 100vw;
+    position: absolute; 
+    top: 150.95%; /* Moves the element to the top of its containing element */
+    left: 0; /* Keeps the element aligned to the left */
+    line-height: 0.8;
+    border-radius: 10px;
+}
+.Hrectangle3:hover {
+  background-color:gray;
+}
+.Hrectangle4{
+  background-color: rgba(245, 245, 245, 0.83);
+  z-index: -1;
+  height: 3.5vh;
+  width: 100vw;
+    position: absolute; 
+    top: 180.95%; /* Moves the element to the top of its containing element */
+    left: 0; /* Keeps the element aligned to the left */
+    line-height: 0.8;
+    border-radius: 10px;
+}
+.Himg >  img{
+  position: absolute;
+  object-fit: cover;
+  width: 15%;
+  margin-top: 20px;
+  margin-left: 20px;
+  height: 90%;
+  z-index: 10;
+}
+.Himg2 >  img{
+  position: absolute;
+  object-fit: cover;
+  width: 10%;
+  margin-top: 20px;
+  margin-left: 20px;
+  height: 80%;
+  z-index: 10;
+  border-radius: 30px;
+}
+.Himg3 >  img{
+  position: absolute;
+  object-fit: cover;
+  width: 10%;
+  border-radius: 30px;
+  margin-top: 20px;
+  margin-left: 20px;
+  height: 80%;
+  z-index: 10;
+}
+.Htext0{
+  background-color: whitesmoke;
+  width: 100vw;
+  height: 26vh;
+  margin-top:37%;
+  justify-self: center;
+  text-align: center;
+}
+.Popular{
+  font-style: italic;
+  color:black;
+  margin-left: 45%;
+  margin-top: 5px;
+  position: relative;
+  width: 100vw;
+}
+.H_d{
+  width: 32vw;
+  height: 60vh;
+  margin-top:-1.25%;
+  border-radius: 10px;
+  background-color: rgba(245, 245, 245, 0.83);
+}
+.H_d1{
+  width: 32.5vw;
+  height: 60vh;
+  margin-top:-33.5%;
+  margin-left: 33.5%;
+  border-radius: 10px;
+  background-color:rgba(245, 245, 245, 0.83);
+}
+.H_d2{
+  width: 32vw;
+  height: 60vh;
+  margin-top:-33.5%;
+  margin-left: 67.5%;
+  border-radius: 10px;
+  background-color:rgba(245, 245, 245, 0.83);
+}
+ .H_dimg1 >  img{
+  position: relative;
+  object-fit: cover;
+  width: 95%;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-left: 21px;
+  height: 190%;
+}
+.H_dimg2 >  img{
+  position: relative;
+  object-fit: cover;
+  width: 97%;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-left: 9px;
+  height: 40%;
+}
+.H_dimg3 >  img{
+  position: relative;
+  object-fit: cover;
+  width: 97%;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-left: 9px;
+  height: 40%;
+}
+ .H_d:hover {
+  transform: scale(1.1); 
+ }
+  
+.H_d1:hover {
+transform: scale(1.1); 
+}
+.H_d2:hover {
+transform: scale(1.1);
+} 
+.practice{
+z-index: 20;
+margin-left: 50%;
+}

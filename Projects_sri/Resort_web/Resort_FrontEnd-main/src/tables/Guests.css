@@ -1,0 +1,67 @@
+/* Container styling */
+.table-container {
+  margin-right: 200px;
+  margin-left: 200px;
+  margin-bottom: 50px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Table styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Semi-transparent white background */
+}
+
+/* Table header styling */
+.table-heading {
+  padding: 15px 20px;
+  background-color: rgba(255, 212, 71, 0.83); /* Gold background color */
+  border-radius: 8px 8px 0 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333; /* Dark gray text color */
+}
+
+/* Table cell styling */
+.table th,
+.table td {
+  padding: 15px 20px;
+  text-align: left;
+  color: #f6f6f6; /* Light gray text color */
+}
+
+/* Table header cell styling */
+.table th {
+  background-color: rgba(255, 212, 71, 0.83); /* Gold background color */
+  font-size: 16px;
+  font-weight: 600;
+  color: #333; /* Dark gray text color */
+}
+
+/* Hover effect for table rows */
+.table tbody tr:hover {
+  background-color: rgba(
+    255,
+    215,
+    0,
+    0.3
+  ); /* Slightly more opaque gold background on hover */
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+  .table-heading,
+  .table th,
+  .table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,36 @@
+
+/* CAB IMAGE */
+/*#root > div.flexbox > div.cabimg {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 120px;
+  margin-right: 100px;
+}
+
+#root > div.flexbox > div.cabimg > img {
+  width: 500px;*/
+
+#root > div.flexbox > div.cabimg > img {
+  width: 500px;
+  margin-top: 120px;
+  margin-left: 100px;
+  margin-right: 200px;
+
+}
+
+/* CAB SERVICE */
+.cabtxt {
+  top: -100px;
+  left: 120px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 433px;
+  height: 134px;
+  font-family: "Jockey One";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 60px;
+  margin: 0;
+  color: #ffffff;
+}

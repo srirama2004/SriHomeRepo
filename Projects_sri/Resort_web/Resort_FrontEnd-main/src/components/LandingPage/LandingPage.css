@@ -1,0 +1,83 @@
+/* styles.css */
+
+/* Set the background to black */
+.bod {
+    background-color: #000000; 
+  }
+  
+  /* Add a gradient effect */
+.bod {
+    background: linear-gradient(135deg, #2ecc71, #3498db, #9b59b6); /* Gradient from light green to sky blue to violet */
+  }
+  
+
+/* Centering container */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    min-height: 100vh; /* Ensures the container takes up at least the full height of the viewport */
+  }
+  
+  /* Add space between images */
+  .image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Adds space between the images and other content above it */
+  }
+  
+  /* Style each image */
+  .image-container > div {
+    margin-right: 20px;
+    margin-left: 20px; /* Adds space between images */
+  }
+  
+  .image {
+    width: 500px; /* Adjust width as needed */
+    height: 300px;
+  }
+  
+  /* Add a transition effect for scaling */
+.image-container > div img {
+    transition: transform 0.3s ease; /* Apply the transition to the transform property */
+  }
+  
+  /* Scale up the image on hover */
+  .image-container > div img:hover {
+    transform: scale(1.1); /* Increase the scale to 1.1 on hover */
+  }
+  
+  /* CSS styles for the Locations heading */
+  /* CSS styles for the Locations heading */
+.locations-heading {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .locations-heading h1 {
+    font-size: 28px; /* Adjust font size */
+    font-weight: bold; /* Bold font weight */
+    color: #ffffff; /* White text color */
+    text-transform: uppercase; /* Uppercase text */
+    font-family: Arial, sans-serif; /* Specify font family */
+  }
+
+  .bg{
+    position: absolute;
+    object-fit: cover;
+    opacity: 70%;
+    width: 100vw;
+    margin-top: 32px;
+    height: 65%;
+    z-index: -10;
+  }
+  
+  /* Style the banner image */
+.banner {
+    width: 100%; /* Adjust width as needed */
+
+    height: 40%; /* Maintain aspect ratio */
+
+    margin-bottom: 20px; /* Add space below the banner */
+}

@@ -1,0 +1,142 @@
+.Brectangle1 {
+    object-position: cover;
+    background-color: black;
+    margin-top: 60px;
+    margin-left: 28.5%;
+    height: 90vh;
+    width: 50vw;
+    opacity: 0.8;
+    border-radius: 70px;
+    clip-path: inset(20px 20px 20px 20px oval 20px);
+   }
+   .Brectangle{
+    background-color:#ecb910;
+    ;
+    z-index: 1;
+    opacity: 0.8;
+    height: 30px;
+    width: 100vw;
+      position: absolute; 
+      top: 0; /* Moves the element to the top of its containing element */
+      left: 0; /* Keeps the element aligned to the left */
+      line-height: 0.8;
+  }
+  .Bpass1 {
+    position: relative;
+    z-index: 1;
+    text-align: left;
+    color:white; 
+    font-size: 30px;
+    display: inline-block;
+    line-height: 1; 
+    margin-left: 10%;
+  }
+  .Bc1 {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color:white; 
+    font-size: 40px;
+    padding: 20px;
+    font-style: oblique;
+  }
+  #text1{
+    width: 120px;
+    height: 30px;
+    margin-right: 28px;
+    margin-left: 10px;
+    height: 30px;
+    border-radius: 30px;
+    }
+    #text{
+      width: 120px;
+      margin-right: 10px;
+      font-style: italic;
+      border-radius: 30px;
+      height: 30px;
+      }
+      .Bs input[type="submit"]{
+        box-sizing: 10px 8px;
+        background-color:yellow;
+        position: relative;
+        margin-top: 10%;
+        margin-left: 25%;
+        font-size: 25px;
+        font-family: 'Times New Roman', Times, serif;
+        text-decoration: double;
+        color:black ;
+        cursor:auto;
+        width: 50%;
+        line-height: 1;
+        border-radius: 40px;
+      }
+      .Bs input[type="submit"]:hover{
+      background-color:red;
+      }
+      .Bt{
+        position: relative;
+        z-index: 3;
+        padding: 20px;
+        margin-left: 55px;
+        line-height: 1;
+        color:white; 
+        font-size: 30px;
+      }
+      .Bim1> img {
+        width: 450px; /* Adjust width as needed */
+        height: 300px; 
+        object-fit: cover; /* Ensures the image covers the entire area */
+        position: relative; /* Fix the image position to cover the viewport */
+        top: 35%;
+        left: 18%;
+        opacity: 5;
+        display: block;
+        border-radius: 60px;
+        z-index: 3;
+      }
+      #text2{
+        width: 30px;
+        margin-right: 10px;
+        font-style: italic;
+        border-radius: 60px;
+        height: 30px;
+        margin-top:-15%;
+        background-color: green;
+        }
+        .Bc > img {
+          width: 100vw; /* Adjust width as needed */
+          height: 100vh;
+          object-fit: cover; /* Ensures the image covers the entire area */
+          margin: 0;
+          position: fixed; /* Fix the image position to cover the viewport */
+          top: 0;
+          left: 0;
+          z-index: -1;
+        }
+        /* Styling for room type select */
+.Bt select {
+  width: 40%;
+  height: 0.5%;
+  padding: 10px;
+  margin-top: 2.5px;
+  border: 0.5px solid #ccc;
+  border-radius: 40px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+/* Styling for option tags */
+.Bt select option {
+  font-size: 16px;
+  background-color: #fff;
+  color: #000;
+  width: 50%;
+}
+
+/* Styling for selected option */
+.Bt select option:checked {
+  background-color: #007bff; /* Change the background color when option is selected */
+  color: #fff;
+  
+}
+

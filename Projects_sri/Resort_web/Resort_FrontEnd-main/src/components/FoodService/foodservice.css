@@ -1,0 +1,105 @@
+.FoodImgBg {
+  position: relative;
+  margin: 0px;
+
+}
+
+.FoodImgBg > img {
+  z-index: -1;
+  position: relative;
+  width: 100vw;
+  height: 350px;
+  margin: 0;
+  object-fit: cover;
+}
+
+.foodbelowpage {
+  width: 0;
+  height: 0;
+  z-index: -2;
+}
+
+.foodbelowpage > div.bg {
+  position: relative;
+  color: #ffffff;
+  background-color: #ffffff;
+  width: 100vw;
+  top: -1500px;
+  height: 1550px;
+  z-index: -2;
+}
+
+.fooditems {
+  position: relative;
+  margin: 50px;
+  margin-top: 0;
+}
+
+.fooditem {
+  padding: 20px;
+  margin-bottom: 25px;
+  display: flex;
+  margin-right: 30px;
+}
+
+.fooditem:hover {
+  background-color: rgba(139, 139, 139, 0.18);
+}
+
+
+.F_text {
+  display: flex;
+
+  flex-direction: column;
+  padding: 40px;
+  flex-grow: 1;
+}
+
+.F_Title {
+  justify-content: center;
+  position: relative;
+  font-size: 40px;
+
+  padding: 0px;
+
+  margin: 0;
+}
+
+.F_Desc {
+
+  flex-grow: 1;
+  display: block;
+
+ /* flex-grow: 30px;
+  display: block;
+  top: 100px;*/
+
+}
+
+.F_price {
+  flex-grow: 1;
+}
+
+.cusines {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  margin: 0;
+  font-weight: 1000;
+  padding: 10px;
+}
+
+.fooditem {
+  padding: 20px;
+  margin-bottom: 25px;
+  display: flex;
+  margin-right: 30px;
+  border: 2px solid transparent; /* Add transparent border */
+}
+
+.fooditem:hover {
+  background-color: rgba(139, 139, 139, 0.18); /* Change background color on hover */
+  border-color: #333; /* Change border color on hover */
+}
+
+

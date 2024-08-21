@@ -1,0 +1,50 @@
+#root > div.flexbox > div.cabimg > img {
+  width: 500px;
+  margin-top: 120px;
+  margin-left: 100px;
+  margin-right: 200px;
+}
+
+/* CAB SERVICE */
+.cabtxt {
+  top: -100px;
+  left: 120px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 433px;
+  height: 134px;
+  font-family: "Jockey One";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 60px;
+  margin: 0;
+  color: #ffffff;
+}
+.loginform{
+margin-left: 70%;
+margin-right: 1%;
+padding-left: 40px;
+z-index: 10;
+}
+.loginbg {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the start (left) */
+}
+.loginbg {
+  padding-left: 20px; /* Add padding to the left */
+}
+.loginform {
+  margin-right: 1%; /* Keep a small margin on the right */
+  padding-left: 40px; /* Add padding to the left of the login form */
+  z-index: 10;
+}
+
+.loginbg {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the start (left) */
+  padding-left: 20px; /* Add padding to the left */
+
+}
