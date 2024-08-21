@@ -1,0 +1,148 @@
+ -- CUSTOMER table
+CREATE TABLE CUSTOMER (
+    cust_id INT PRIMARY KEY,
+    cname VARCHAR(50),
+    city VARCHAR(30)
+);
+
+-- ORDERS table
+CREATE TABLE ORDERS (
+    order_id INT PRIMARY KEY,
+    odate DATE,
+    cust_id INT,
+    ordamt INT,
+    FOREIGN KEY (cust_id) REFERENCES CUSTOMER(cust_id)
+);
+
+-- ITEM table
+CREATE TABLE ITEM (
+    item_id INT PRIMARY KEY,
+    unitprice INT
+);
+
+-- ORDER_ITEMS table
+CREATE TABLE ORDER_ITEMS (
+    order_id INT,
+    item_id INT,
+    qty INT,
+    PRIMARY KEY (order_id, item_id),
+    FOREIGN KEY (order_id) REFERENCES ORDERS(order_id),
+    FOREIGN KEY (item_id) REFERENCES ITEM(item_id)
+    on delete cascade);
+
+-- SHIPMENT table
+CREATE TABLE SHIPMENT (
+    order_id INT PRIMARY KEY,
+    warehouse_id INT,
+    shipdate DATE,
+    FOREIGN KEY (order_id) REFERENCES ORDERS(order_id),
+    FOREIGN KEY (warehouse_id) REFERENCES WAREHOUSE(warehouse_id)
+);
+
+-- WAREHOUSE table
+CREATE TABLE WAREHOUSE (
+    warehouse_id INT PRIMARY KEY,
+    city VARCHAR(30)
+);
+///////////////////////////
+-- Sample data for CUSTOMER
+INSERT INTO CUSTOMER VALUES
+(1, 'Customer1', 'City1'),
+(2, 'Customer2', 'City2'),
+(3, 'Customer3', 'City3'),
+(4, 'Customer4', 'City4'),
+(5, 'Customer5', 'City5');
+
+-- Sample data for ORDERS
+INSERT INTO ORDERS VALUES
+(101, '2024-01-01', 1, 500),
+(102, '2024-01-02', 2, 700),
+(103, '2024-01-03', 3, 300),
+(104, '2024-01-04', 4, 900),
+(105, '2024-01-05', 5, 400);
+
+-- Sample data for ITEM
+INSERT INTO ITEM VALUES
+(201, 10),
+(202, 15),
+(203, 20),
+(204, 25),
+(205, 30);
+
+-- Sample data for ORDER_ITEMS
+INSERT INTO ORDER_ITEMS VALUES
+(101, 201, 2),
+(101, 202, 1),
+(102, 203, 3),
+(103, 204, 1),
+(104, 205, 2);
+
+-- Sample data for SHIPMENT
+INSERT INTO SHIPMENT VALUES
+(101, 1, '2024-01-10'),
+(102, 2, '2024-01-12'),
+(103, 3, '2024-01-15'),
+(104, 4, '2024-01-20'),
+(105, 5, '2024-01-25');
+
+-- Sample data for WAREHOUSE
+INSERT INTO WAREHOUSE VALUES
+(1, 'WarehouseCity1'),
+(2, 'WarehouseCity2'),
+(3, 'WarehouseCity3'),
+(4, 'WarehouseCity4'),
+(5, 'WarehouseCity5');
+1)select C.cname as CUSTOMER,count(O.order_id) as No_of_Orders,AVG(ordamt)
+from CUSTOMER C NATURAL JOIN ORDERS O
+GROUP BY C.cname;
+2)select * 
+from SHIPMENT S, WAREHOUSE W 
+ where W.city='WarehouseCity5' and S.warehouse_id=W.warehouse_id;
+3)INSERT INTO ITEM VALUES(206,50);
+  INSERT INTO ORDER_ITEMS VALUES(105,206,15);
+  update ORDERS natural join ORDER_ITEMS
+  set ordamt= case
+  when qty>=10 then ordamt*0.9
+  else ordamt*0.95
+  end 
+/////////////////////////
+1)INSERT INTO ORDERS values (106, '2024-01-01', 1, 500);
+ select *
+ from CUSTOMER C natural join ORDERS O
+ where O.odate='2024-01-01';
+2)select count(item_id)
+ from ORDER_ITEMS 
+ GROUP BY order_id ;
+3)select max(coitem)
+from (select count(item_id) as coitem
+      from ORDER_ITEMS 
+ GROUP BY order_id) as itemcounts;
+4)INSERT INTO SHIPMENT VALUES(106, 5, '2024-01-25');
+ SELECT shipdate
+FROM SHIPMENT
+GROUP BY shipdate
+ORDER BY COUNT(*) DESC
+LIMIT 1;
+4)
+5)
+// make it cascade first
+Delete from item
+where item_id = 201 ;
+7)SELECT * FROM CUSTOMER
+where cname Like '%omer1';
+8)select cname,sum(ordamt) 
+from CUSTOMER NATURAL JOIN ORDERS 
+group by cname
+order by sum(ordamt) desc;
+9)INSERT INTO ORDERS values (107, '2024-01-01', 1, 500);
+  INSERT INTO SHIPMENT VALUES(107, 5, '2024-01-25');
+Select cname , count(*)
+from Customer natural join ORDERS
+Where cust_id in (Select cust_id
+from shipment natural join orders
+WHERE shipment.shipdate = '2024-01-25')
+group by cname
+having count(*) >= 3;
+6)
+
+

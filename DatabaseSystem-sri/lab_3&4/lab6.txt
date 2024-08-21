@@ -1,0 +1,145 @@
+1) SHOW ERRORS
+SET SERVEROUTPUT ON 
+create or replace trigger dritri
+after insert on PARTICIPATED for each row
+DECLARE 
+v_name PERSON.name%TYPE;
+begin 
+select name into v_name
+from PERSON
+where driver_id=:new.driver_id;
+dbms_output.put_line(v_name);
+end;
+/
+2)CREATE OR REPLACE FUNCTION fun_tot
+RETURN NUMBER
+IS 
+    total_ac NUMBER;
+BEGIN 
+    SELECT COUNT(*) INTO total_ac
+    FROM ACCIDENT
+    WHERE EXTRACT(YEAR FROM accd_date) = 2024;
+    
+    dbms_output.put_line('Total accidents in 2024: ' || total_ac);
+    
+    RETURN total_ac; 
+END; 
+/
+calling the function
+select fun_tot() from dual;
+3)
+CREATE OR REPLACE PROCEDURE fun
+IS 
+    total_dama NUMBER;
+BEGIN 
+    SELECT SUM(damage_amount) INTO total_dama
+    FROM ACCIDENT NATURAL JOIN PERSON NATURAL JOIN PARTICIPATED
+    GROUP BY name,damage_amount
+    HAVING EXTRACT(YEAR FROM accd_date) = 2024;
+dbms_output.put_line('Total accidents in 2024 for driver d001: ' || total_dama);
+END; 
+/
+select fun() from dual;
+4) CREATE OR REPLACE PROCEDURE loca(loc IN ACCIDENT.location%TYPE)
+   is
+   v_name PERSON.name%TYPE;
+BEGIN
+ SELECT PERSON.name INTO v_name
+    FROM ACCIDENT, PERSON, PARTICIPATED
+      where PERSON.driver_id=PARTICIPATED.driver_id AND ACCIDENT.report_number =PARTICIPATED.report_number AND Accident.location=loc;
+dbms_output.put_line('name of the driver is: ' || v_name);
+END; 
+/
+EXEC loca('chandi'); //running a procedure is diff from function point to note
+/////////////////////////////////////////////////////EXTRAS////////////////////
+
+1)CREATE OR REPLACE PROCEDURE get_driver_name(
+    driver_id IN PERSON.driver_id%TYPE,
+    driver_name OUT PERSON.name%TYPE
+)
+IS
+BEGIN
+    SELECT name INTO driver_name
+    FROM PERSON
+    WHERE driver_id = get_driver_name.driver_id;
+END;
+/
+how to run?
+VARIABLE driver_name VARCHAR2(100);
+EXEC get_driver_name('d001', :driver_name);
+PRINT driver_name;
+2) SELECT SUM(damage_amount)
+    FROM ACCIDENT NATURAL JOIN PERSON NATURAL JOIN PARTICIPATED
+    GROUP BY name,accd_date
+    HAVING EXTRACT(YEAR FROM accd_date) = 2024;
+
+   
+     
+  /////cursor
+DECLARE
+custo CUSTOMER.cust_id%TYPE;
+totaloramt ORDERS.ordamt%type;
+cursor c1 is
+select c.cust_id,sum(o.ordamt)
+from CUSTOMER c,ORDERS o
+where c.cust_id=o.cust_id
+group by c.cust_id;
+BEGIN
+open c1;
+LOOP
+FETCH c1 into custo,totaloramt;
+  DBMS_OUTPUT.PUT_LINE('Customer ID: ' || custo || ', Total Order Amount: ' || totaloramt);
+end loop;
+close c1;
+EXCEPTION 
+ WHEN OTHERS THEN
+        -- Print error message
+        DBMS_OUTPUT.PUT_LINE('An error occurred: ' || SQLERRM);
+end;
+/
+//////customer trigger//////////////
+create TRIGGER cust
+after insert on ORDERS for each row
+DECLARE
+custname CUSTOMER.cname%TYPE;
+custid CUSTOMER.cust_id%TYPE;
+BEGIN
+select cname into custname
+from CUSTOMER
+WHERE cust_id = :NEW.cust_id; ////dont forget in triggers////////
+  EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            DBMS_OUTPUT.PUT_LINE('Customer with ID ' || :NEW.cust_id || ' not found.');
+    END;
+DBMS_output.PUT_LINE('CUSTOMER NAME::'||custname);
+select cust_id into custid
+from CUSTOMER
+WHERE cust_id = :NEW.cust_id;
+DBMS_output.PUT_LINE('CUSTOMER ID::'||custid);
+end;
+/
+
+////////////////
+create or replace function f(did IN PERSON.driver_id%type)
+return varchar is
+dname PERSON.name %TYPE;
+BEGIN
+select name INTO dname
+from PERSON
+where person.driver_id=did;
+dbms_output.put_line('name::'||dname);
+return dname;
+end;
+/
+select f('d001') from dual;
+VARIABLE n VARCHAR2(20);
+EXECUTE :n := f('d001');
+PRINT n;
+///////////////////////////
+create trigger dtriti
+after insert on table_name for each row
+DECLARE
+type1;
+type2;
+begin
+select 

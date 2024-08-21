@@ -1,0 +1,113 @@
+create table PERSON(
+driver_id varchar(30) primary key,
+name varchar(50),
+address varchar(100));
+//
+
+create table CAR(
+reg_no varchar(20) primary key,
+MODEL VARCHAR(30),
+Year int);
+//
+
+create table ACCIDENT(
+report_number int primary key,
+location VARCHAR(50),
+accd_date date);
+//
+
+create table PARTICIPATED(
+driver_id varchar(30),
+ reg_no varchar(20),
+ report_number int,
+ damage_amount int,
+foreign key(report_number) references Accident(report_number)
+ ON DELETE SET NULL
+ );
+//
+
+create table OWNS(
+driver_id varchar(30),
+ reg_no varchar(20),
+ foreign key(driver_id) references PERSON(driver_id),
+foreign key(reg_no) references CAR(reg_no) );
+
+//////////////////////////////////////////////
+
+INSERT INTO PERSON VALUES('d001','sriram','udupi');
+INSERT INTO PERSON VALUES('d002','jessica','manipal');
+INSERT INTO PERSON VALUES('d003','raghav','up');
+INSERT INTO PERSON VALUES('d004','lakshya','chandi');
+INSERT INTO PERSON VALUES('d005','roshan','kunda');
+
+INSERT INTO CAR VALUES('220911','23109',15);
+INSERT INTO CAR VALUES('220915','23101',15);
+INSERT INTO CAR VALUES('220914','23102',14);
+INSERT INTO CAR VALUES('220912','23103',12);
+INSERT INTO CAR VALUES('220910','23104',9);
+
+INSERT INTO ACCIDENT VALUES(9,'udupi',date '2024-07-13');
+INSERT INTO ACCIDENT VALUES(10,'udupi',date '2023-08-13');
+INSERT INTO ACCIDENT VALUES(7,'manipal',date '2024-07-13');
+INSERT INTO ACCIDENT VALUES(8,'chandi',date '2022-07-15');
+INSERT INTO ACCIDENT VALUES(4,'kunda',date '2024-08-13');
+INSERT INTO ACCIDENT VALUES(5,'kundapura',date '2024-06-13');
+
+
+INSERT INTO PARTICIPATED VALUES('d001','220911',9,5600);
+INSERT INTO PARTICIPATED VALUES('d002','220915',10,900);
+INSERT INTO PARTICIPATED VALUES('d003','220914',7,5600);
+INSERT INTO PARTICIPATED VALUES('d004','220912',8,5678);
+INSERT INTO PARTICIPATED VALUES('d005','220910',4,789);
+INSERT INTO PARTICIPATED VALUES('d005','220910',4,100);
+INSERT INTO PARTICIPATED VALUES('d005','220910',5,200);
+
+INSERT INTO OWNS VALUES('d001','220911');
+INSERT INTO OWNS VALUES('d002','220915');
+INSERT INTO OWNS VALUES('d003','220914');
+INSERT INTO OWNS VALUES('d004','220912');
+INSERT INTO OWNS VALUES('d005','220910');
+5)alter table PARTICIPATED
+add int AGE;
+alter table PARTICIPATED
+drop column  AGE;
+6)alter table PARTICIPATED
+  add constraint
+  age>18;
+//////////////////////////////////////////////
+3)UPDATE PARTICIPATED
+ SET damage_amount=25000
+WHERE report_number=10;
+///////////////////////////////////////////////
+4)delete from ACCIDENT
+WHERE extract (year from accd_date)='2024';
+///////////////////////////
+1)select count(P.driver_id)
+from PARTICIPATED P ,ACCIDENT A
+WHERE extract (year from A.accd_date)='2024' AND P.report_number=A.report_number;
+//////////////for delete from accident to this//
+ALTER TABLE PARTICIPATED
+DROP FOREIGN KEY participated_ibfk_1;
+ALTER TABLE PARTICIPATED
+ADD CONSTRAINT participated_ibfk_1
+FOREIGN KEY (report_number)
+REFERENCES ACCIDENT(report_number)
+ON DELETE SET NULL;
+//////////////////////////////////////LAB_4/////
+1.select count(P.driver_id)
+from PARTICIPATED P ,ACCIDENT A
+WHERE extract (year from A.accd_date)='2024' AND P.report_number=A.report_number;
+2.select P.name as OWNER,count(P.driver_id),sum(per.damage_amount)
+from PERSON P , PARTICIPATED per
+WHERE per.driver_id=P.driver_id
+group by P.name
+order by sum(per.damage_amount);
+3.SELECT YEAR(a.accd_date) AS accident_year, p.name
+FROM PARTICIPATED pa
+JOIN ACCIDENT a ON pa.report_number = a.report_number
+JOIN PERSON p ON pa.driver_id = p.driver_id
+GROUP BY accident_year, p.name
+HAVING COUNT(a.report_number) >= 2;
+4.select *
+from PERSON
+WHERE driver_id not in(select driver_id from PARTICIPATED);

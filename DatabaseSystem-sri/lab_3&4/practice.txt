@@ -1,0 +1,14 @@
+create table employee(
+ id INT primary key,
+name varchar(10),
+email varchar(10));
+create table dept(
+ did INT primary key,
+dname varchar(10)
+);
+create table ed(
+ id INT ,
+did int,
+foreign key (id)references employee(id)
+);
+INSERT INTO employee values (1,'a','a@');

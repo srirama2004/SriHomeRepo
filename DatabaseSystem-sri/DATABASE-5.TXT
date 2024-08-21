@@ -1,0 +1,106 @@
+CREATE TABLE STUDENT (
+    regno VARCHAR(20),
+    name VARCHAR(50),
+    major VARCHAR(20),
+    bdate DATE,
+    PRIMARY KEY (regno)
+);
+
+CREATE TABLE COURSE (
+    course INT,
+    cname VARCHAR(30),
+    dept VARCHAR(30),
+    PRIMARY KEY (course)
+);
+
+CREATE TABLE ENROLL (
+    regno VARCHAR(20),
+    course INT,
+    FOREIGN KEY (regno) REFERENCES STUDENT(regno),
+    FOREIGN KEY (course) REFERENCES COURSE(course),
+    PRIMARY KEY (regno, course)
+);
+
+CREATE TABLE BOOK_ADOPTION (
+    course INT,
+    sem INT,
+    book_isbn INT,
+    FOREIGN KEY (course) REFERENCES COURSE(course),
+    PRIMARY KEY (course, sem)
+);
+
+CREATE TABLE TEXT (
+    book_isbn INT,
+    booktitle VARCHAR(50),
+    publisher VARCHAR(50),
+    author VARCHAR(50),
+    PRIMARY KEY (book_isbn)
+);
+-- Insert into STUDENT table
+INSERT INTO STUDENT (regno, name, major, bdate) VALUES
+('S001', 'John Doe', 'Computer', '2000-05-15'),
+('S002', 'Jane Smith', 'Electrical', '2001-10-20'),
+('S004', 'Jane Smith', 'Electrical', '2001-10-20'),
+('S003', 'Alice Johnson', 'Physics', '1999-08-08');
+
+-- Insert into COURSE table
+INSERT INTO COURSE (course, cname, dept) VALUES
+(101, 'Intr to Programming', 'Computer'),
+(102, 'DBMS', 'Computer'),
+(201, 'Electric Circuits', 'Electrical'),
+(202, 'Signals and Systems', 'Electrical'),
+(301, 'Classical Mechanics', 'Physics'),
+(302, 'Quantum Mechanics', 'Physics');
+INSERT INTO COURSE VALUES(107,'ds','Computer');
+-- Insert into ENROLL table
+INSERT INTO ENROLL (regno, course) VALUES
+('S001', 101),
+('S001', 102),
+('S002', 201),
+('S002', 202),
+('S003', 301),
+('S003', 302);
+INSERT INTO ENROLL VALUES ( 'S004',107);
+-- Insert into BOOK_ADOPTION table
+INSERT INTO BOOK_ADOPTION (course, sem, book_isbn) VALUES
+(101, 1, 1001),
+(102, 1, 1002),
+(201, 1, 2001),
+(202, 1, 2002),
+(301, 1, 3001),
+(302, 1, 3002);
+insert into BOOK_ADOPTION VALUES (107,1,1007);
+-- Insert into TEXT table
+INSERT INTO TEXT (book_isbn, booktitle, publisher, author) VALUES
+(1001, 'Introduction to Programming', 'ABC Publications', 'John Smith'),
+(1002, 'Database Management Essentials', 'XYZ Publishing', 'Jane Doe'),
+(2001, 'Electric Circuits Fundamentals', 'ABC Publications', 'Alice Johnson'),
+(2002, 'Signals and Systems Basics', 'XYZ Publishing', 'Bob Johnson'),
+(3001, 'Classical Mechanics: An Introduction', 'ABC Publications', 'Charlie Brown'),
+(3002, 'Quantum Mechanics Explained', 'XYZ Publishing', 'David Smith');
+INSERT INTO TEXT VALUES (1007, 'Introduction to DS', 'ABC Publications', 'John Smith');
+select *
+from TEXT natural join BOOK_ADOPTION 
+WHERE course in(select course
+        from COURSE NATURAL JOIN ENROLL
+        );
+SELECT distinct(course)
+from BOOK_ADOPTION NATURAL JOIN TEXT
+where course in (select course
+                from BOOK_ADOPTION NATURAL JOIN TEXT 
+                 WHERE publisher='XYZ Publishing'
+                 group by course
+                 having count(DISTINCT publisher)>=1)
+
+SELECT course
+FROM BOOK_ADOPTION
+JOIN TEXT ON BOOK_ADOPTION.book_isbn = TEXT.book_isbn
+WHERE publisher = 'ABC Publishing'
+GROUP BY course#
+HAVING COUNT(*) >= 1;
+SELECT publisher,count(*)
+FROM TEXT 
+GROUP BY publisher;
+select *
+from STUDENT NATURAL JOIN ENROLL
+WHERE course in(select course from ENROLL NATURAL JOIN BOOK_ADOPTION);
