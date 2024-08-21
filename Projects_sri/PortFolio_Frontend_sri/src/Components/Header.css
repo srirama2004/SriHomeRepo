@@ -1,0 +1,27 @@
+header {
+    background-color: #333;
+    color: rgb(243, 156, 18);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    
+  }
+  nav a {
+    color:rgb(248, 155, 6);
+    text-decoration: none;
+  }  
+  .rec1:hover,
+.rec2:hover,
+.rec3:hover,
+.rec4:hover {
+  border-radius: 5%;
+  transform: scale(2.1); /* Increase size on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Bigger shadow */
+}
