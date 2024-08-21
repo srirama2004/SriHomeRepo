@@ -1,0 +1,2 @@
+www.google.com 126.16.16.0
+www.amazon.com 126.16.16.1
