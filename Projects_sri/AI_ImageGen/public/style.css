@@ -1,0 +1,17 @@
+/* public/style.css */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+}
+
+#result {
+  margin-top: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
