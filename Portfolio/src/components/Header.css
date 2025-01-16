@@ -1,0 +1,49 @@
+/* src/components/Header.css */
+.navbar {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end; /* Aligns items to the right */
+    position: fixed;           /* Fixes the navbar at the top */
+    top: 0;                   /* Positions it at the top */
+    right: 0;                 /* Aligns it to the right */
+    z-index: 1000;           /* Ensure the navbar is above other content */
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+  
+  .nav-item {
+    color: #00ff00;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Specific background colors for each item */
+  .nav-item.home {
+    background-color: #1a1a1a;  /* Dark gray */
+  }
+  
+  .nav-item.skills {
+    background-color:#1a1a1a;  /* Medium gray */
+  }
+  
+  .nav-item.contact {
+    background-color: #1a1a1a;  /* Lighter gray */
+  }
+  
+  /* Hover effect */
+  .nav-item:hover {
+    background-color: #00ff00;
+    color: #000;
+    text-decoration-color: #000;
+  }
+  

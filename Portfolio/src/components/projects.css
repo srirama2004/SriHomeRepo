@@ -1,0 +1,200 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #222;
+  color: white;
+}
+
+.parent-container {
+  padding: 20px;
+}
+
+.projects-title {
+  text-align: center;
+  color: #00ff00;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.carousel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.card {
+  width: 45%;
+  height: 400px;
+  background-color: #242424dc;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  margin-top: 5%;
+  padding: auto;
+  margin: 10px; 
+}
+
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.5s; }
+.card:nth-child(3) { animation-delay: 0.9s; }
+.card:nth-child(4) { animation-delay: 1.4s; }
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-content {
+  display: flex;
+  padding: 20px;
+  gap: 15px;
+  align-items: center;
+}
+
+.card-image img {
+  width: 150px;
+  border-radius: 10px;
+}
+
+.card-description {
+  flex-grow: 1;
+}
+
+.card-description h3 {
+  color: #00ff00;
+  margin-bottom: 10px;
+}
+
+.card-description p {
+  margin-bottom: 15px;
+}
+
+.card-description a {
+  text-decoration: none;
+  background-color: #00ff00;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.card-description a:hover {
+  background-color: #009900;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    width: 80%;
+  }
+}
+.card {
+  width: 45%;
+  height: 400px;
+  background-color: #000000;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgb(0, 0, 0);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  margin: 10px;
+  border: 2px solid transparent; /* Add a border to enable glowing effect */
+}
+
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+.card:nth-child(4) { animation-delay: 0.8s; }
+
+.card:hover {
+  transform: scale(0.55);
+  box-shadow: 0 0 20px 5px #00ff00; /* Add glowing green effect */
+  border-color: #00ff00; /* Set border color to green */
+}
+.card-container {
+  position: relative;
+  width: 40%; /* Maintain card size */
+  height: 360px; /* Maintain card size */
+  margin: 10px;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 15px;
+  margin-top: 5%;
+}
+
+.card-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  z-index: -1; /* Place behind the card */
+  background: linear-gradient(90deg, #00ff00, #ff0000, #0000ff, #00ff00);
+  background-size: 200% 200%;
+  animation: borderGlow 3s linear infinite; /* Animated gradient */
+}
+
+.card {
+  width: 100%; /* Full width inside the container */
+  height: 100%; /* Full height inside the container */
+  background-color: #000000; /* Card background */
+  border-radius: 15px; /* Match border radius */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px;
+  margin-left: 1px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 1; /* Ensure it's above the glowing border */
+}
+
+.card-content {
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.card:hover {
+  transform: scale(0.55); /* Slight enlargement on hover */
+  transition: transform 0.3s ease;
+}
+
+@keyframes borderGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+

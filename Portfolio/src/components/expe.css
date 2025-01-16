@@ -1,0 +1,173 @@
+/* General Section Styling */
+.experience-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    align-items: center;
+    padding: 80px 20px;  /* Ensure enough padding for the section */
+    border-radius: 20px;
+}
+
+.experience-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #292929; /* Darker background */
+    border-radius: 20px;
+    padding: 40px;
+    margin: 20px;
+    margin-top: 40%;
+    width: 90%;
+    max-width: 900px;  /* Consistent max width */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow for more depth */
+    opacity: 100%;
+    transform: translateY(20px);  /* Initially, it's slightly lower */
+    animation: floatIn 1s forwards; /* Animation to make it float in */
+    text-align: left;  /* Left-aligned text */
+    border: 2px solid transparent; /* Border starts as transparent */
+    transition: border-color 0.5s ease-in-out; /* Smooth transition for border color */
+}
+
+.experience-section:hover {
+    border-color: #00ff00; /* Green color when hovered */
+}
+
+@keyframes floatIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 0.9;
+        transform: translateY(0); /* Final position, fully visible */
+    }
+}
+
+.experience-section h3 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: 700;  /* Bold heading */
+}
+.experience-section h4 {
+    font-size: 2.2rem;
+    color: #00ff00;
+    margin-bottom: 20px;
+    font-weight: 700;  /* Bold heading */
+}
+
+.experience-section p {
+    font-size: 1.1rem;
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 15px;  /* Consistent spacing */
+}
+
+.experience-section ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.experience-section li {
+    font-size: 1rem;
+    color: #f6fff6;
+    margin-bottom: 8px;
+}
+
+.experience-section strong {
+    font-weight: 600; /* Bold for key details */
+    color: #00ff00;
+}
+.courses-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #292929; /* Darker background */
+    border-radius: 20px;
+    padding: 40px;
+    margin: 20px;
+    width: 90%;
+    max-width: 900px;  /* Consistent max width */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow for more depth */
+    opacity: 100%;
+    transform: translateY(20px);  /* Initially, it's slightly lower */
+    animation: floatIn 1s forwards; /* Animation to make it float in */
+    text-align: left;  /* Left-aligned text */
+    border: 2px solid transparent; /* Border starts as transparent */
+    transition: border-color 0.5s ease-in-out; /* Smooth transition for border color */
+}
+.courses-section:hover {
+    border-color: #00ff00; /* Green color when hovered */
+}
+
+@keyframes floatIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 0.9;
+        transform: translateY(0); /* Final position, fully visible */
+    }
+}
+
+.courses-section h3 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: 700;  /* Bold heading */
+}
+.courses-section h3 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: 700;  /* Bold heading */
+}
+
+.courses-section p {
+    font-size: 1.1rem;
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 15px;  /* Consistent spacing */
+}
+
+.courses-section ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.courses-section li {
+    font-size: 1rem;
+    color: #f6fff6;
+    margin-bottom: 8px;
+}
+
+.courses-section strong {
+    font-weight: 600; /* Bold for key details */
+    color: #00ff00;
+}
+a.certificate-link {
+    text-decoration: none; /* Remove underline */
+    color: #fff; /* White color for the link */
+    background-color: #4CAF50; /* Green background color */
+    padding: 5px 10px; /* Add padding to make it more clickable */
+    border-radius: 5px; /* Rounded corners for the link */
+    margin-left: 10px; /* Space between the certificate link and text */
+    font-size: 1rem; /* Font size of the certificate link */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  a.certificate-link:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  strong {
+    font-weight: bold; /* Keep the strong text bold */
+  }
+  
+  span.certificate-link {
+    color: #999; /* Grey text for unavailable certificates */
+    font-style: italic; /* Italicize the text indicating that certificate is not available */
+  }
